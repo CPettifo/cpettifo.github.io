@@ -9,7 +9,7 @@ const Motle = () => {
     const fetchRandomWord = async () => {
       try {
         const response = await fetch(
-          "https://superb-bombolone-33f34b.netlify.app/query.js"
+          "https://superb-bombolone-33f34b.netlify.app/.netlify/functions/fetchRandomWord"
         );
 
         if (!response.ok) {
