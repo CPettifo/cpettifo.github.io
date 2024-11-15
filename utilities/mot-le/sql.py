@@ -1,0 +1,1 @@
+# this file will add contents of fivers.txt and un_accented.txt to their respective tables in the SQL database
