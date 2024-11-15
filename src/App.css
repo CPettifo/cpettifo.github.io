@@ -11,27 +11,38 @@ body, html {
 
 .etch-a-sketch {
   text-align: center;
+  padding: 10px;
+  width: 90%; /* Adjust to fit smaller screens */
+  max-width: 500px; /* Prevent it from stretching too wide */
+  box-sizing: border-box;
 }
 
 h1 {
   margin-bottom: 20px;
+  font-size: 1.5em; /* Adjust font size for smaller screens */
 }
 
 .slider-container {
   display: flex;
   align-items: center;
+  gap: 10px; /* Add space between slider and label */
+  width: 100%; /* Ensure it scales well */
 }
 
 #grid-size-slider {
-  width: 300px;
+  flex: 1; /* Make slider take remaining space */
+  max-width: 300px; /* Cap slider width */
 }
 
 #board {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 500px;
-  height: 500px;
+  width: 100%; /* Use full width available */
+  max-width: 500px; /* Cap width for larger screens */
+  height: 0;
+  padding-top: 100%; /* Maintain a square aspect ratio */
+  position: relative; /* Necessary for aspect ratio trick */
   border: 2px solid black;
   margin: 0 auto;
 }
@@ -50,24 +61,14 @@ h1 {
   margin-top: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  gap: 20px;
+  justify-content: space-between; /* Distribute slider and button */
+  gap: 10px; /* Add space between elements */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
-
-.footer {
-  margin-top: 20px;
-  text-align: center;
-  padding: 10px 0;
-  width: 100%;
-  bottom: 0;
-}
-
 
 button {
-  margin: 5px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px; /* Reduce size for smaller screens */
   cursor: pointer;
   border: none;
   border-radius: 4px;
@@ -77,4 +78,13 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 0.9em; /* Slightly smaller font for footer */
+  color: #555;
 }
