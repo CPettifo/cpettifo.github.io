@@ -17,7 +17,7 @@ const Motle = () => {
         }
 
         const data = await response.json();
-        setRandomWord(data.mot); // Assuming `mot` is the field for the word
+        setRandomWord(data.mot); 
       } catch (err) {
         setError(err.message);
       }
