@@ -18,7 +18,8 @@ h1 {
 }
 
 .slider-container {
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 #grid-size-slider {
@@ -47,9 +48,21 @@ h1 {
 
 #settings {
   margin-top: 20px;
-  flex:1;
-  flex-direction:column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
 }
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  bottom: 0;
+}
+
 
 button {
   margin: 5px;
