@@ -11,58 +11,63 @@ body, html {
 
 .etch-a-sketch {
   text-align: center;
-  padding: 10px;
-  width: 90%;
-  max-width: 500px;
-  box-sizing: border-box;
 }
 
 h1 {
   margin-bottom: 20px;
-  font-size: 1.5em;
 }
 
 .slider-container {
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: 100%;
 }
 
 #grid-size-slider {
-  flex: 1;
-  max-width: 300px;
+  width: 300px;
 }
 
 #board {
-  display: grid;
-  gap: 1px; /* Small gap between pixels */
-  width: 100%; /* Full width within container */
-  max-width: 500px;
-  aspect-ratio: 1 / 1; /* Ensures it stays square */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  height: 500px;
   border: 2px solid black;
   margin: 0 auto;
-  background-color: white;
+}
+
+.row {
+  display: flex;
+  flex: 1;
 }
 
 .pixel {
-  background-color: white;
-  width: 100%; /* Ensures full size in grid cell */
-  height: 100%; /* Ensures full size in grid cell */
+  flex: 1;
+  border: 1px solid #ccc;
 }
 
 #settings {
   margin-top: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
 }
 
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  bottom: 0;
+}
+
+
 button {
+  margin: 5px;
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   border: none;
   border-radius: 4px;
@@ -72,13 +77,4 @@ button {
 
 button:hover {
   background-color: #0056b3;
-}
-
-.footer {
-  margin-top: 20px;
-  text-align: center;
-  padding: 10px 0;
-  width: 100%;
-  font-size: 0.9em;
-  color: #555;
 }
