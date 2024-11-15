@@ -24,8 +24,18 @@ function App() {
           pixel.style.backgroundColor = "black";
         });
 
-        pixel.addEventListener("touchmove", () => {
+        pixel.addEventListener("touchstart", (event) => {
+          event.preventDefault(); // Prevent scrolling
           pixel.style.backgroundColor = "black";
+        });
+        
+        pixel.addEventListener("touchmove", (event) => {
+          event.preventDefault(); // Prevent scrolling
+          const touch = event.touches[0];
+          const elementUnderTouch = document.elementFromPoint(touch.clientX, touch.clientY);
+          if (elementUnderTouch && elementUnderTouch.classList.contains("pixel")) {
+            elementUnderTouch.style.backgroundColor = "black";
+          }
         });
 
         rows.appendChild(pixel);
