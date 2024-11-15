@@ -54,7 +54,7 @@ function App() {
   return (
     <div className="etch-a-sketch">
       <h1>Hey there</h1>
-      <h2>Portfolio in progress, Etch-a-Sketch while we wait.</h2>
+      <h2>Portfolio in progress, let's Etch-a-Sketch while we wait.</h2>
       <div ref={boardRef} id="board"></div>
       <div id="settings">
         <button id="reset" onClick={resetBoard}>
