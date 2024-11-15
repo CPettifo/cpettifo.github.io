@@ -12,63 +12,57 @@ body, html {
 .etch-a-sketch {
   text-align: center;
   padding: 10px;
-  width: 90%; /* Adjust to fit smaller screens */
-  max-width: 500px; /* Prevent it from stretching too wide */
+  width: 90%;
+  max-width: 500px;
   box-sizing: border-box;
 }
 
 h1 {
   margin-bottom: 20px;
-  font-size: 1.5em; /* Adjust font size for smaller screens */
+  font-size: 1.5em;
 }
 
 .slider-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Add space between slider and label */
-  width: 100%; /* Ensure it scales well */
+  gap: 10px;
+  width: 100%;
 }
 
 #grid-size-slider {
-  flex: 1; /* Make slider take remaining space */
-  max-width: 300px; /* Cap slider width */
+  flex: 1;
+  max-width: 300px;
 }
 
 #board {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%; /* Use full width available */
-  max-width: 500px; /* Cap width for larger screens */
-  height: 0;
-  padding-top: 100%; /* Maintain a square aspect ratio */
-  position: relative; /* Necessary for aspect ratio trick */
+  display: grid;
+  gap: 1px; /* Small gap between pixels */
+  width: 100%; /* Full width within container */
+  max-width: 500px;
+  aspect-ratio: 1 / 1; /* Ensures it stays square */
   border: 2px solid black;
   margin: 0 auto;
-}
-
-.row {
-  display: flex;
-  flex: 1;
+  background-color: white;
 }
 
 .pixel {
-  flex: 1;
-  border: 1px solid #ccc;
+  background-color: white;
+  width: 100%; /* Ensures full size in grid cell */
+  height: 100%; /* Ensures full size in grid cell */
 }
 
 #settings {
   margin-top: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Distribute slider and button */
-  gap: 10px; /* Add space between elements */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 button {
   padding: 10px 20px;
-  font-size: 14px; /* Reduce size for smaller screens */
+  font-size: 14px;
   cursor: pointer;
   border: none;
   border-radius: 4px;
@@ -85,6 +79,6 @@ button:hover {
   text-align: center;
   padding: 10px 0;
   width: 100%;
-  font-size: 0.9em; /* Slightly smaller font for footer */
+  font-size: 0.9em;
   color: #555;
 }
