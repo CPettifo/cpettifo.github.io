@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import Motle from "./pages/Motle"; 
 
 function App() {
   // Default grid size
@@ -62,30 +64,50 @@ function App() {
   };
 
   return (
-    <div className="etch-a-sketch">
-      <h1>Hey there</h1>
-      <h2>Portfolio in progress, let's Etch-a-Sketch while we wait.</h2>
-      <div ref={boardRef} id="board"></div>
-      <div id="settings">
-        <button id="reset" onClick={resetBoard}>
-          Reset
-        </button>
-        <div className="slider-container">
-        <label htmlFor="grid-size-slider">Grid Size: {size} x {size}</label>
-        <input
-          id="grid-size-slider"
-          type="range"
-          min="4"
-          max="64"
-          value={size}
-          onChange={handleSliderChange}
-        />
-        </div>
+    <Router>
+      <div>
+        {/* Navigation */}
+        <nav>
+          <Link to="/">Etch-a-Sketch</Link>
+          {" | "}
+          <Link to="/motle">Motle</Link>
+        </nav>
+
+        {/* Routing */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+            <div className="etch-a-sketch">
+              <h1>Hey there</h1>
+              <h2>Portfolio in progress, let's Etch-a-Sketch while we wait.</h2>
+              <div ref={boardRef} id="board"></div>
+              <div id="settings">
+                <button id="reset" onClick={resetBoard}>
+                  Reset
+                </button>
+                <div className="slider-container">
+                <label htmlFor="grid-size-slider">Grid Size: {size} x {size}</label>
+                <input
+                  id="grid-size-slider"
+                  type="range"
+                  min="4"
+                  max="64"
+                  value={size}
+                  onChange={handleSliderChange}
+                />
+                </div>
+              </div>
+              <footer className="footer">
+                <p>Built with React by Craig Pettifor</p>
+              </footer>
+            </div>
+            }
+          />
+          <Route path="/motle" element={<Motle />} />
+        </Routes>
       </div>
-      <footer className="footer">
-        <p>Built with React by Craig Pettifor</p>
-      </footer>
-    </div>
+  </Router>
   );
 }
 
